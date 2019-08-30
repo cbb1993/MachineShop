@@ -2,6 +2,7 @@ package com.huanhong.mashineshop;
 
 import android.app.Application;
 import android.content.Context;
+import android.media.MediaPlayer;
 import android.util.Log;
 
 import com.alibaba.sdk.android.push.CloudPushService;
@@ -13,6 +14,7 @@ import controller.VendApplication;
 public class AppApplication extends VendApplication {
     private static final String TAG = "AppApplication";
     public static AppApplication mInstance;
+    public static MediaPlayer mediaPlayer;
     @Override
     public void onCreate() {
         super.onCreate();

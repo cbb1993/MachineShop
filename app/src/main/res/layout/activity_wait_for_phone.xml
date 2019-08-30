@@ -30,6 +30,7 @@
         android:layout_height="wrap_content" />
 
    <Button
+       android:visibility="gone"
        android:id="@+id/skip"
        android:textColor="#fff"
        android:background="#000"

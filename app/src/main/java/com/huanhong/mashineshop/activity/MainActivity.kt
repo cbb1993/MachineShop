@@ -4,6 +4,7 @@ import android.content.Intent
 import android.support.v4.app.ActivityCompat
 import android.util.Log
 import android.view.View
+import com.huanhong.mashineshop.AppApplication
 import com.huanhong.mashineshop.BaseActivity
 import com.huanhong.mashineshop.R
 import com.huanhong.mashineshop.utils.SharedPreferencesUtils
@@ -74,6 +75,7 @@ class MainActivity : BaseActivity() {
 
     override fun onResume() {
         super.onResume()
+        AppApplication.mediaPlayer.pause()
         TcnVendIF.getInstance().registerListener(m_vendListener)
     }
 
@@ -152,12 +154,8 @@ class MainActivity : BaseActivity() {
         super.onDestroy()
         if (webview != null) {
             webview.clearHistory()
-            webview.clearHistory()
-            webview.stopLoading()
-            webview.clearHistory()
             webview.clearCache(true)
             webview.loadUrl("about:blank")
-            webview.pauseTimers()
         }
     }
 }
